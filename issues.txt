@@ -1,3 +1,5 @@
 1._Q: NoReverseMatch at /
 Reverse for 'filtered' with arguments '('',)' not found. 1 pattern(s) tried: ['categories/(?P<category_id>[0-9]+)/$']
 1._A: there was a commented code in the mainhome file I had to delete it
+2._Q: Failed to push some ref
+2._A: the next command is usefull to solve the problem: git reset --mixed origin/<branch>
