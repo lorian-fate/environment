@@ -1,0 +1,15 @@
+{% extends "main.html" %}
+
+{% block content %} 
+
+
+
+<div style="text-align: center;"> 
+    <form action="" method="POST" style="text-align: center;">
+        {% csrf_token %}
+        <table style="color: white; margin: 20px auto;">{{form.as_table}}</table>
+        <input type="submit" value="submit">
+    </form>
+</div>
+
+{% endblock %}

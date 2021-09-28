@@ -1,0 +1,20 @@
+{% extends "ENVIRONMENT_APP/userhome.html" %}
+
+{% block content %} 
+
+{% for pyt in file_to_delete %}
+<div style="text-align: center;"> 
+    <form action="" method="POST" style="text-align: center;">
+        {% csrf_token %}
+        ARE YOU SURE TO DELETE: {{pyt.exercice_title}}
+        <input type="submit" value="Yes" style="background-color: red;"/> 
+        <a href="{% url 'userhome' %}">Cancel </a>
+    </form>
+</div>
+{% endfor %}
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,19 @@
+{% extends "log_main.html" %}
+{% load crispy_forms_tags %}
+{% block content %} 
+
+<div class="container" style="text-align: center;">
+    <div class="col-md-6 offset-md-3 mt-10"> 
+        <div class="jumbotron" style="background-color: #ffffff3a;">
+            <h1 class="display-4">User Register</h1>
+            <form action="" method="POST" style="text-align: center;">
+                {% csrf_token %}
+                <table style="color: white; margin: 20px auto;">{{sign_up_form|crispy}}</table>
+                <input type="submit" value="submit" class="btn btn-success btn-flat m-b-30 m-t-30" style="width: 200px;">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

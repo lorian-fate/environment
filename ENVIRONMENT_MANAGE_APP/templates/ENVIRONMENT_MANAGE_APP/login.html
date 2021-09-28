@@ -1,0 +1,27 @@
+{% extends "log_main.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+    
+<div class="container" style="text-align: center;">
+    <div class="col-md-6 offset-md-3 mt-5" > 
+        <div class="jumbotron" style="background-color: #ffffff1a;">
+            <h1 class="display-4" style="color:#ffffff">Log in</h1>
+            <form action="" method="post" style="text-align: center;">
+                {% csrf_token %}
+                <table style="margin: 30px auto; color:#ffffff">{{form|crispy}}</table>
+                <div>
+                    <a href="{% url 'sign' %}" style="color: rgb(255, 255, 255);">sign up</a>
+                </div>
+                <div>
+                    <a></a>
+                </div>
+                <input type="submit" value="log in" class="btn btn-success btn-flat m-b-30 m-t-30" style="width: 200px;">
+                <div>
+                    <a>Forgot password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

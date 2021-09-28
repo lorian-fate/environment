@@ -1,0 +1,46 @@
+{% extends "main.html" %}
+
+
+{% block content %} 
+
+<h1 class="display-4" style="text-align: center; color:#ffffff">ALL FILES</h1>
+
+
+
+{% if tag %}
+<h2>Posts tagged with "{{ tag.name }}"</h2>
+{% endif %}
+        {% for st in stud %}
+        <div class="col-md-7 offset-md-1 mt-15"> 
+              <table class="table table-7f8085">
+                <thead>
+                    <tr>
+                      <th scope="col">
+                          <a href='{{ st.get_absolute_url }}'>
+                            <h2>{{ st.exercice_title }}</h2>
+                            <p class="tags">
+                                Tags: 
+                                {% for tag in st.tags.all %}
+                                    <a href="{% url 'file_by_tag' tag.slug %}">
+                                        {{ tag.name }}
+                                    </a>
+                                    {% if not forloop.last %}, {% endif %}
+                                {% endfor %}
+                            </p>
+                          </a>      
+                        <p class='date'>
+                          Uploaded {{ st.publish }} by {{ st.exercice_author}}
+                      </p>
+                      <h5 style="color:white">{{st.exercice_Statement}}</h5>
+                      <a href="{{st.exercice_file.url}}" download="{{st.exercice_file.url}}">download</a>
+                    </th>
+                    </tr>
+                  </thead>
+            </table>
+        </div>
+        {% endfor %}
+      {% include "pagination.html" with page=stud %}
+
+
+
+{% endblock %}

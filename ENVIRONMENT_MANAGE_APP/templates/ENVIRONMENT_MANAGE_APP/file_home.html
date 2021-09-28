@@ -1,0 +1,20 @@
+{% extends "main.html" %}
+
+{% load file_tags %}
+{% block content %} 
+<h1 style="color:rgb(255, 255, 255)">{{ obj_file.exercice_title }}</h1>
+<p class='date'>
+    Published {{ obj_file.publish }} by {{ obj_file.exercice_author}}
+</p>
+<h7 style="color:white">{{ obj_file.exercice_Statement | linebreaks}}</h7>
+
+
+<h2 style="color:rgb(255, 255, 255)">Similar File</h2>
+{% for file in similar_file %}
+    <p>
+        <a href="{{ file.get_absolute_url }}">{{ file.exercice_title }}</a>
+    </p>
+{% empty %}
+    <h6 style="color:white">There's no similar file yet</h6>
+{% endfor %}
+{% endblock %}

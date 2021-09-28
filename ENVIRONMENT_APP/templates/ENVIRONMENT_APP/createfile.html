@@ -1,0 +1,26 @@
+
+{% extends "ENVIRONMENT_APP/userhome.html" %}
+
+{% load crispy_forms_tags %}
+{% block content %} 
+
+
+<div class="container" style="text-align: center;">
+    <div class="col-md-10 offset-md-1 mt-10"> 
+        <div class="jumbotron" style="background-color: #9396a300;">
+            <h1 class="display-4">New File</h1>
+            <form action="" method="POST" enctype="multipart/form-data" style="text-align: center;">
+                {% csrf_token %}
+                <table style="color: white; margin: 20px auto;">{{file|crispy}}</table>
+                <input type="submit" value="submit" class="btn btn-success btn-flat m-b-30 m-t-30" style="width: 200px;">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,40 @@
+{% extends "main.html" %}
+
+{% block content %} 
+
+<h1 class="display-4" style="text-align: center;">Your Files</h1>
+{% for stud in student_File %}
+    <div class="container" style="text-align: center;" >
+        <div class="col-md-15 offset-md-0 mt-10"> 
+            <div class="jumbotron" style="background-color: #585c6d9f;">
+              <table class="table table-7f8085">
+                <thead>
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">TITLE</th>
+                      <th scope="col">STATEMENT</th>
+                      <th scope="col">FILE</th>
+                      <th scope="col">CATEGORY</th>
+                      <th scope="col">FORMATION</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">{{stud.id}}</th>
+                      <td>{{stud.exercice_title}}</td>
+                      <td>{{stud.exercice_Statement}}</td>
+                      <td><a href="{{stud.exercice_file.url}}" download="{{stud.exercice_file.url}}">{{stud.exercice_file}}</a></td>
+                      <td>{{stud.exercice_category}}</td>
+                      <th scope="col">MPP</th>
+                    </tr>
+                  </tbody>
+            </table>       
+            <div style="text-align: left;">
+                Author: {{stud.exercice_author}}
+            </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+{% endblock %}

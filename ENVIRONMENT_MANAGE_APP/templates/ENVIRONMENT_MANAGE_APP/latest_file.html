@@ -1,0 +1,7 @@
+<ul>
+    {% for file in latest_file %}
+        <li>
+            <a href="{{ file.get_absolute_url }}">{{ file.exercice_title }}</a>
+        </li>
+    {% endfor %}
+</ul>

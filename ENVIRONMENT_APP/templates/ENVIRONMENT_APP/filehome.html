@@ -1,0 +1,43 @@
+{% extends "ENVIRONMENT_APP/userhome.html" %}
+
+{% block content %} 
+
+
+    <h1 class="col-md-10 offset-md-1 mt-10" style="text-align: center;">Your Files</h1>
+    {% for stud in student_F %}
+    <div class="container" style="text-align: center;" >
+        <div class="col-md-10 offset-md-1 mt-10"> 
+            <div class="jumbotron" style="background-color: #86878d;">
+              <table class="table table-7f8085">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">TITLE</th>
+                    <th scope="col">STATEMENT</th>
+                    <th scope="col">FILE</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">{{stud.id}}</th>
+                    <td>{{stud.exercice_title}}</td>
+                    <td>{{stud.exercice_Statement}}</td>
+                    <td>{{stud.exercice_file}}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <form>
+                <a style="background-color: #ffffff00;" href="{% url 'detail' stud.id %}" class="btn text-secondary px-0">
+                    <i class="fas fa-angle-double-right" style="color: rgb(8, 8, 8);" ></i>
+                </a>
+              </form>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+{% endblock %}
+
+
+
+
